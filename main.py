@@ -253,7 +253,7 @@ def on_message(client, userdata, msg):
         logger.info("Estado detectado: Tumbado")
     try:
         query = """
-            INSERT INTO UNFV.SENSOR_EVENTS( sensor_name, event_date_reg, avg_ax, avg_ay, avg_az, avg_gx, avg_gy, avg_gz, min_ax, min_ay, min_az, min_gx, min_gy, min_gz, max_ax, max_ay, max_az, max_gx, max_gy, max_gz, std_ax, std_ay, std_az, std_gx, std_gy, std_gz, value_predict)
+            INSERT INTO [UNFV].[dbo].[SENSOR_EVENTS]( sensor_name, event_date_reg, avg_ax, avg_ay, avg_az, avg_gx, avg_gy, avg_gz, min_ax, min_ay, min_az, min_gx, min_gy, min_gz, max_ax, max_ay, max_az, max_gx, max_gy, max_gz, std_ax, std_ay, std_az, std_gx, std_gy, std_gz, value_predict)
             VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
         cursor.execute(query, (
